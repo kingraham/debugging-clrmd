@@ -1,8 +1,12 @@
 # debugging-clrmd
 Project utilizing clrmd to view process internals
 
+Libraries used:
 clrmd:
 https://github.com/Microsoft/clrmd
+
+cecil:
+https://github.com/jbevain/cecil
 
 This is currently a sample project that can inspect the threads, stack objects, and app domain assemblies of a running CLR process. 
 
