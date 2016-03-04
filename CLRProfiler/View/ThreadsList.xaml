@@ -1,0 +1,48 @@
+﻿<UserControl x:Class="CLRProfiler.View.ThreadsList"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:CLRProfiler.View"
+             xmlns:behaviors="clr-namespace:CLRProfiler.Behaviors"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             mc:Ignorable="d"
+             d:DesignHeight="600" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="*" />            
+        </Grid.ColumnDefinitions>
+        <DataGrid Grid.Column="0" ItemsSource="{Binding Threads}" SelectedItem="{Binding SelectedItem}" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding ManagedThreadId}" />
+                <DataGridTextColumn Header="OS ID" Binding="{Binding OSThreadId}" />
+                <DataGridCheckBoxColumn Header="Background?" Binding="{Binding IsBackground, Mode=OneWay}" />
+                <DataGridCheckBoxColumn Header="Alive?" Binding="{Binding IsAlive, Mode=OneWay}" />
+            </DataGrid.Columns>
+        </DataGrid>        
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />                     
+                <RowDefinition Height="*" />
+                <RowDefinition Height="30" />
+            </Grid.RowDefinitions>
+            <local:PropertyView HorizontalAlignment="Stretch" VerticalAlignment="Stretch" DataContext="{Binding SelectedThread}" />
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />                    
+                </Grid.RowDefinitions>
+                <Separator Grid.Row="0" />
+                <TextBlock Text="Stack Frame" Grid.Row="1" Padding="3 0"/>
+                <DataGrid Grid.Row="2" ItemsSource="{Binding SelectedItem.StackTrace}" AutoGenerateColumns="true" IsReadOnly="True" AlternatingRowBackground="LightGray">                   
+                    <i:Interaction.Behaviors>
+                        <behaviors:PropertyListAutoGenerateBehavior />
+                    </i:Interaction.Behaviors>
+                </DataGrid>               
+            </Grid>
+            <Button Style="{StaticResource DialogButton}" Command="{Binding ShowStackObjects}" Content="_Stack Objects" Grid.Row="3" Width="100" HorizontalAlignment="Right"/>
+        </Grid>
+    </Grid>
+</UserControl>

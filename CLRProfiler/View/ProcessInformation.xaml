@@ -1,0 +1,46 @@
+﻿<UserControl x:Class="CLRProfiler.View.ProcessInformation"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">             
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="130" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Style="{StaticResource FieldRowDefinition}" />
+            <RowDefinition Style="{StaticResource FieldRowDefinition}" />
+            <RowDefinition Style="{StaticResource FieldRowDefinition}" />
+            <RowDefinition Style="{StaticResource FieldRowDefinition}" />
+            <RowDefinition Style="{StaticResource FieldRowDefinition}" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <!-- Column 0 -->
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Base App Domain:" HorizontalAlignment="Right" />
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="CLR Version:" HorizontalAlignment="Right" />
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="# of App Domains:" HorizontalAlignment="Right" />
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="# of Modules:" HorizontalAlignment="Right" />
+        <TextBlock Grid.Row="4" Grid.Column="0" Text="# of Threads:" HorizontalAlignment="Right" />
+        <!-- Column 1 -->
+        <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding BaseAppDomain}" Style="{StaticResource ValueField}" />
+        <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding CLRVersion}" Style="{StaticResource ValueField}" />
+        <TextBlock Grid.Row="2" Grid.Column="1" Style="{StaticResource ValueField}">
+            <Hyperlink Command="{Binding OpenAppDomainsCommand}"> 
+                <TextBlock Text="{Binding AppDomainCount}" />
+            </Hyperlink>
+        </TextBlock>
+        <TextBlock Grid.Row="3" Grid.Column="1" Style="{StaticResource ValueField}">
+            <Hyperlink Command="{Binding OpenFirstAppDomainCommand}"> 
+                <TextBlock Text="{Binding ModulesCount}" />
+            </Hyperlink>
+        </TextBlock>
+        <TextBlock Grid.Row="4" Grid.Column="1" Style="{StaticResource ValueField}">
+            <Hyperlink Command="{Binding OpenThreadsCommand}"> 
+                <TextBlock Text="{Binding ThreadCount}" />
+            </Hyperlink>
+        </TextBlock>        
+    </Grid>
+</UserControl>

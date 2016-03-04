@@ -1,0 +1,26 @@
+﻿<Window x:Class="CLRProfiler.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:viewmodel="clr-namespace:CLRProfiler.ViewModel"
+        xmlns:view="clr-namespace:CLRProfiler.View"
+        Title="MainWindow" Height="600" Width="800"
+        DataContext="{Binding Main, Source={StaticResource Locator}}">
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type viewmodel:ProcessViewViewModel}">
+            <view:ProcessView />
+        </DataTemplate>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Menu>
+            <MenuItem Header="_File">
+                <MenuItem Header="_Attach to Process" Command="{Binding Path=AttachToProcessCommand}" Visibility="{Binding Path=IsAttachedToProcess, Converter={StaticResource InverseBooleanToVisibilityConverter}}" />
+                <MenuItem Header="_Detach from Process" Command="{Binding Path=DetachFromProcessCommand}" Visibility="{Binding Path=IsAttachedToProcess, Converter={StaticResource BooleanToVisibilityConverter}}" />
+            </MenuItem>  
+        </Menu>
+        <ContentControl Content="{Binding Path=SelectedProcessView}" Grid.Row="1" />
+    </Grid>
+</Window>

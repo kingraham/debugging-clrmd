@@ -1,0 +1,24 @@
+﻿/// Handle WeaveRaisePropertyChanged
+			/// Find all properties under a class decorated with WeaveRaisePropertyChanged that has a backing field.
+			/// 
+			/// What we're writing....
+			/*
+			IL_0000: nop
+			IL_0001: ldarg.0
+			IL_0002: ldarg.0
+			IL_0003: ldflda class [GalaSoft.MvvmLight]GalaSoft.MvvmLight.ViewModelBase CLRProfiler.Model.ProcessInfoTab::_ViewModel
+			IL_0008: ldarg.1
+			IL_0009: ldstr "ViewModel"
+			IL_000e: call instance bool [GalaSoft.MvvmLight]GalaSoft.MvvmLight.ObservableObject::Set<class [GalaSoft.MvvmLight]GalaSoft.MvvmLight.ViewModelBase>(!!0&, !!0, string)
+			IL_0013: pop
+			IL_0014: ret
+			 * */
+
+			/// What we're replacing.
+			 /* 	IL_0000: ldarg.0
+					IL_0001: ldarg.1
+					IL_0002: stfld string CLRProfiler.Model.ProcessInfoTab::'<Test>k__BackingField'
+					IL_0007: ret
+			 */
+
+What we're writing will reference the backing field instead..

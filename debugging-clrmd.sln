@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CLRProfiler", "CLRProfiler\CLRProfiler.csproj", "{FB028392-5760-4ADA-8626-1FB3958090C3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B3435DEB-3D37-4268-B3F9-6E6A01F96D6E} = {B3435DEB-3D37-4268-B3F9-6E6A01F96D6E}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClrProfilerConsole", "ClrProfilerConsole\ClrProfilerConsole.csproj", "{3CD7129B-D568-474B-9B3D-9D381588F55F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVVMLightILWeaver", "MVVMLightILWeaver\MVVMLightILWeaver.csproj", "{B3435DEB-3D37-4268-B3F9-6E6A01F96D6E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FB028392-5760-4ADA-8626-1FB3958090C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB028392-5760-4ADA-8626-1FB3958090C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB028392-5760-4ADA-8626-1FB3958090C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB028392-5760-4ADA-8626-1FB3958090C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CD7129B-D568-474B-9B3D-9D381588F55F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CD7129B-D568-474B-9B3D-9D381588F55F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CD7129B-D568-474B-9B3D-9D381588F55F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CD7129B-D568-474B-9B3D-9D381588F55F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3435DEB-3D37-4268-B3F9-6E6A01F96D6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3435DEB-3D37-4268-B3F9-6E6A01F96D6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3435DEB-3D37-4268-B3F9-6E6A01F96D6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3435DEB-3D37-4268-B3F9-6E6A01F96D6E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
