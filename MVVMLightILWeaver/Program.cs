@@ -14,7 +14,7 @@ namespace MVVMLightILWeaver
 	{
 		static void Main(string[] args)
 		{
-			String pathToCLRProfiler = @"C:\Users\XBBL3R6\Documents\Visual Studio 2013\Projects\ClrMDSandbox\CLRProfiler\bin\Debug\CLRProfiler.exe";
+			String pathToCLRProfiler = @"CLRProfiler.exe";
 			if (args.Length > 0)
 				pathToCLRProfiler = args[0];
 
